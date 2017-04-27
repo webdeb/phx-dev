@@ -1,4 +1,4 @@
-# phx-dev
+# webdeb/phx-dev
 
 Dockerize Phoenix (dev, build, test) environment
 
