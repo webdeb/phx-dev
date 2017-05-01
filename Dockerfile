@@ -31,6 +31,18 @@ RUN \
 RUN mix local.hex --force && \
     mix local.rebar --force
 
+ADD vendor vendor
+# Install credo standalone
+RUN cd vendor/credo && \
+    mix deps.get && \
+    mix archive.build && \
+    mix archive.install
+
+# Install bunt
+RUN cd vendor/bunt && \
+    mix archive.build && \
+    mix archive.install
+
 ENV PATH /opt/.yarn/bin:$PATH
 
 WORKDIR /opt/app
