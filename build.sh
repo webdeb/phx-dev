@@ -1,4 +1,2 @@
-cd vendor
-git clone git@github.com:rrrene/credo.git
-git clone https://github.com/rrrene/bunt
-cd .. && docker build -t webdeb/phx-dev .
+docker build --no-cache -t webdeb/phx-dev \
+  -t webdeb/phx-dev:1.6.4 .
